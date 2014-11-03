@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[etiennelb.com]]></title>
+  <subtitle><![CDATA[Site personnel]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://www.etiennelb.com/"/>
+  <updated>2014-11-03T13:22:37.486Z</updated>
+  <id>http://www.etiennelb.com/</id>
+  
+  <author>
+    <name><![CDATA[Etienne LE BELLEGUY]]></name>
+    <email><![CDATA[contact@etiennelb.com]]></email>
+  </author>
+  
+  <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hostsblock]]></title>
+    <link href="http://www.etiennelb.com/2014/09/01/Hostsblock/"/>
+    <id>http://www.etiennelb.com/2014/09/01/Hostsblock/</id>
+    <published>2014-09-01T14:26:00.000Z</published>
+    <updated>2014-11-03T13:05:30.000Z</updated>
+    <content type="html"><![CDATA[<p><em><a href="https://gaenserich.github.io/hostsblock/" target="_blank" rel="external">Hostsblock</a> est un script bash permettant de maintenir à jour un fichier système HOSTS pour bloquer de façon générale les publicités internet, les sites malicieux, les trackers et autre contenus indésirables.</em></p>
+<p>Ce script télécharge un ensemble paramétrable de listes d’URL à bloquer et les places dans un unique fichier Hosts.</p>
+<p>Cette technique n’est pas récente, des fichiers hosts sont <a href="http://someonewhocares.org/hosts/" target="_blank" rel="external">disponibles et mis à jour depuis des années</a> mais hostsblock permet d’automatiser et de surcharger ces listes suivant les besoins de l’utilisateur.</p>
+<p>Hostsblock inclut également un utilitaire en ligne de commande nommé <code>hostsblock-urlcheck</code> permettant de tester une URL et toutes les URL dépendantes et de déterminer lesquelles devant être bloquées ou non.</p>
+<a id="more"></a>
+
+<h1 id="Fonctionnalités_:">Fonctionnalités :</h1>
+<ul>
+<li>bloquage d’URL au niveau système</li>
+<li>non-intéractif (peut être exécuté en tâche cronjob périodique)</li>
+<li>très configurable (white list, black list, post-processing, choix du fichier Hosts, …)</li>
+<li>télécharge uniquement les listes qui ont changées</li>
+<li>très performant (couplé à un cache DNS et un pseudo server web)</li>
+</ul>
+<p>Hostblock est une excellente alternative aux plugins anti-publicité des navigateurs, tels que AdBlock, car :</p>
+<ul>
+<li>utilise très peu de mémoire (les plugins navigateur ont tendance à être assez gourmand)</li>
+<li>plus sécurisé (un plugin en moins dans le navigateur)</li>
+<li>plus stable</li>
+<li>s’applique à tout le système</li>
+<li>peut être utilisé sur un proxy gateway pour tout un parc (serveur DNS local)</li>
+<li>meilleure gestion de la configuration (les fichiers white list / black list peuvent être versionnés dans git par exemple)</li>
+</ul>
+<p>Les seuls inconvénients sont :</p>
+<ul>
+<li>installation plus complexe qu’un simple plugin navigateur</li>
+<li>penser à mettre à jour les listes ou mettre en place un cronjob</li>
+</ul>
+<h1 id="Installation">Installation</h1>
+<h2 id="Archlinux">Archlinux</h2>
+<p>Hostsblock est disponible sur <a href="https://aur.archlinux.org/packages/hostsblock/" target="_blank" rel="external">AUR</a> :</p>
+<figure class="highlight"><pre><div class="line"><span class="variable">$ </span>yaourt -<span class="constant">S</span> hostsblock dnsmasq</div></pre></figure>
+
+<p>Puis laissez-vous guider.</p>
+<h2 id="Autre_distribution_(Ubuntu_/_Debian)">Autre distribution (Ubuntu / Debian)</h2>
+<p>Hostsblock est plus performant avec un cache DNS local avec dnsmasq par exemple et un serveur web retournant une page vide en local.</p>
+<figure class="highlight"><pre><div class="line">$ <span class="built_in">sudo</span> apt-get install dnsmasq unzip p7zip</div></pre></figure>
+
+<p>A l’heure où j’écris ces lignes, il n’y a pas de paquet debian pour hostsblock. Pour garder le script à jour, je préfère cloner le repo git que d’installer l’archive :</p>
+<figure class="highlight"><pre><div class="line">$ git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/gaenserich/hostsblock.git</div><div class="line">$ sudo <span class="built_in">mkdir</span> /etc/hostsblock/</div><div class="line">$ sudo <span class="keyword">cp</span> black.<span class="keyword">list</span> white.<span class="keyword">list</span> hostsblock.<span class="keyword">conf</span> /etc/hostsblock/</div></pre></figure>
+
+<p>Pour le serveur web local, vous pouvez utiliser <a href="https://code.google.com/p/kwakd/" target="_blank" rel="external">kwakd</a> ou <a href="http://proxytunnel.sourceforge.net/pixelserv.php" target="_blank" rel="external">pixelserv</a> ou si vous êtes pressé et si ce n’est déjà fait, vous pouvez toujours installer nginx :</p>
+<figure class="highlight"><pre><div class="line">$ <span class="built_in">sudo</span> apt-get install nginx</div></pre></figure>
+
+<h1 id="Configuration">Configuration</h1>
+<ol>
+<li>Définir la méthode de cache DNS en ajoutant la directive suivante dans <code>/etc/hostsblock/hostsblock.conf</code> :<br><code>dnscacher=dnsmasq</code></li>
+<li>Configurer dnsmasq comme cache DNS local : ajouter la ligne suivante dans le fichier de configuration <code>/etc/dnsmasq.conf</code> :<br><code>listen-address=127.0.0.1</code></li>
+<li>Toujours dans <code>/etc/dnsmasq.conf</code>, indiquer le fichier contenant les URL à bloquer :<br><code>addn-hosts=/etc/hosts.block</code></li>
+<li>Pour debian/ubuntu, ajouter le post-process dans <code>/etc/hostsblock/hostsblock.conf</code> pour redémarrer dnsmasq après chaque mise à jour : </li>
+</ol>
+<figure class="highlight"><pre><div class="line"><span class="function"><span class="title">postprocess</span><span class="params">()</span>{</span></div><div class="line">    /<span class="title">etc</span>/<span class="title">init</span>.<span class="title">d</span>/<span class="title">dnsmasq</span> <span class="title">restart</span></div><div class="line">}</div></pre></figure>
+
+<h1 id="Utilisation">Utilisation</h1>
+<p>Pour initialiser la liste des URL, lancer une première fois le script manuellement en tant que root :</p>
+<figure class="highlight"><pre><div class="line">$ <span class="built_in">sudo</span> ./hostsblock.sh</div></pre></figure>
+
+<p>Si jamais vous souhaitez accéder à un site bloqué, ou si vous souhaitez bloquer un site ou une URL utilisée par un service :</p>
+<figure class="highlight bash"><pre><div class="line">$ <span class="built_in">sudo</span> hostsblock-urlcheck <span class="string">"http://www.example.org"</span></div></pre></figure>
+
+<p>Le script vous demande ensuite ce que vous souhaitez bloquer/débloquer.</p>
+<h1 id="Mises_à_jour">Mises à jour</h1>
+<p>Exécuter manuellement la commande hostsblock en tant que root et/ou placer cette commande dans un job cron.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><em><a href="https://gaenserich.github.io/hostsblock/" target="_blank" rel="external">Hostsblock</a> est un script bash permettant de maintenir à jour un fichier système HOSTS pour bloquer de façon générale les publicités internet, les sites malicieux, les trackers et autre contenus indésirables.</em></p>
+<p>Ce script télécharge un ensemble paramétrable de listes d’URL à bloquer et les places dans un unique fichier Hosts.</p>
+<p>Cette technique n’est pas récente, des fichiers hosts sont <a href="http://someonewhocares.org/hosts/" target="_blank" rel="external">disponibles et mis à jour depuis des années</a> mais hostsblock permet d’automatiser et de surcharger ces listes suivant les besoins de l’utilisateur.</p>
+<p>Hostsblock inclut également un utilitaire en ligne de commande nommé <code>hostsblock-urlcheck</code> permettant de tester une URL et toutes les URL dépendantes et de déterminer lesquelles devant être bloquées ou non.</p>
+]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Un bureau esthétique avec Numix]]></title>
+    <link href="http://www.etiennelb.com/2014/05/23/numix/"/>
+    <id>http://www.etiennelb.com/2014/05/23/numix/</id>
+    <published>2014-05-23T21:02:01.000Z</published>
+    <updated>2014-11-03T12:54:33.000Z</updated>
+    <content type="html"><![CDATA[<p><em><a href="http://numixproject.org" target="_blank" rel="external">Numix</a> est une collection de thèmes GTK, d’icônes, de fonds d’écran et de scripts conky pour les environnements de bureau Linux (Gnome, MATE, Unity, XFCE et Openbox).</em></p>
+<a id="more"></a>
+
+<p><img src="numix.png" alt="screenshot of Numix desktop"></p>
+<blockquote>
+<p>Numix is a modern and stylish way to give your desktop a warm and jazzy feel.</p>
+</blockquote>
+<p>C’est un thème GTK3, mais il fonctionne très bien avec GTK2 (sous <a href="http://mate-desktop.org/" target="_blank" rel="external">MATE</a> par exemple).</p>
+<p>Le thème GTK principal est noir avec une surbrillance orange. Il existe des variantes avec une interface blanche.</p>
+<p>Ces thèmes s’inspirent des interfaces <a href="http://en.wikipedia.org/wiki/Flat_UI_Design" target="_blank" rel="external">Flat Design</a> qui sont un effet de mode minimaliste actuellement répandu.</p>
+<h2 id="Installation_pour_Arch">Installation pour Arch</h2>
+<p>Si ce n’est pas déjà fait, activer les <a href="https://wiki.archlinux.org/index.php/AUR" target="_blank" rel="external">Arch User Repository (AUR)</a>.</p>
+<p>Puis, par exemple, en utilisant <a href="https://wiki.archlinux.org/index.php/yaourt" target="_blank" rel="external">yaourt</a> :</p>
+<figure class="highlight bash"><pre><div class="line">$ yaourt -S numix-themes numix-icon-theme-git numix-circle-icon-theme-git</div></pre></figure>
+
+<p>Certains paquets étant issus de dépôts git, penser à les installer de nouveau régulièrement pour les mettre à jour.</p>
+<h3 id="Variante_bleue_pour_Arch">Variante bleue pour Arch</h3>
+<p>Il existe une version aux couleurs d’Arch Linux, basée sur une couleur de surbrillance bleue :</p>
+<figure class="highlight"><pre><div class="line"><span class="variable">$ </span>yaourt -<span class="constant">S</span> numix-themes-archblue</div></pre></figure>
+
+<h2 id="Installation_pour_Ubuntu">Installation pour Ubuntu</h2>
+<p>Ajouter le PPA officiel de Numix :</p>
+<figure class="highlight bash"><pre><div class="line">$ <span class="built_in">sudo</span> add-apt-repository ppa:numix/ppa</div><div class="line">$ <span class="built_in">sudo</span> apt-get update</div></pre></figure>
+
+<p>Puis installer le thème et les icônes :</p>
+<figure class="highlight bash"><pre><div class="line">$ <span class="built_in">sudo</span> apt-get install numix-gtk-theme numix-icon-theme numix-icon-theme-circle</div></pre></figure>
+
+<p>Puis sélectionner les thèmes dans vos préférences utilisateur.</p>
+<h2 id="Thème_pour_Conky">Thème pour Conky</h2>
+<p><img src="conky.jpg" alt="screenshot of conky"></p>
+<p><a href="http://conky.sourceforge.net/" target="_blank" rel="external">Conky</a> est un moniteur système permettant d’afficher des informations en arrière-plan sur le bureau. Par exemple, afficher la température de l’ordinateur, les taux de transfert réseau ou encore… la météo !</p>
+<p>C’est un outil très complet qui se configure sous forme de scripts assez complexes. Il est préférable de démarrer avec un script existant.</p>
+<p>Le thème <a href="http://satya164.deviantart.com/art/Conky-Google-Now-366545753" target="_blank" rel="external">Conky Google Now</a> est proposé par Numix. Il permet d’afficher quelques informations réseaux et la météo (le lieu est à préciser dans les scripts).</p>
+<p>Pour l’installer, il suffit de <a href="http://satya164.deviantart.com/art/Conky-Google-Now-366545753" target="_blank" rel="external">télécharger l’archive sur deviantart</a> et la décompresser dans votre répertoire personnel (<code>home</code>).</p>
+<p>En fonction de votre fond d’écran, choisir entre les 3 variantes du thème <em>black</em>, <em>white</em> et <em>transparent</em> en renommant les fichiers <code>.conkyrc-*</code> ou en créant un lien symbolique :</p>
+<figure class="highlight bash"><pre><div class="line">$ ln <span class="operator">-s</span> .conkyrc-black .conkyrc</div></pre></figure>
+
+<p>Pour un rendu optimal, installer les polices de caractères <a href="http://opensans.com/" target="_blank" rel="external">Open Sans (Light)</a>.</p>
+<p>Et si vous ne trouvez pas votre bonheur dans les fonds d’écran, il y a toujours <a href="http://wallhaven.cc" target="_blank" rel="external">wallhaven</a> :)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><em><a href="http://numixproject.org" target="_blank" rel="external">Numix</a> est une collection de thèmes GTK, d’icônes, de fonds d’écran et de scripts conky pour les environnements de bureau Linux (Gnome, MATE, Unity, XFCE et Openbox).</em></p>
+]]>
+    
+    </summary>
+    
+  </entry>
+  
+</feed>
