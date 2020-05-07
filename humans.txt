@@ -1,0 +1,14 @@
+/* TEAM */
+
+	Auteur: Etienne Le Belléguy
+	Contact: hello [at] etiennelb.com
+	Twitter: @etiennelb
+	From:Nantes, France
+
+/* THANKS */
+
+/* SITE */
+	Last update:2020/06/01
+	Language: French
+	Doctype:HTML5
+	IDE: IntelliJ IDEA, VS Codium
