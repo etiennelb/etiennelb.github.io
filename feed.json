@@ -9,5 +9,19 @@
         "name": "Etienne Le Belléguy"
     },
     "items": [
+        {
+            "id": "https://etiennelb.com/about/",
+            "url": "https://etiennelb.com/about/",
+            "title": "A propos",
+            "summary": "Ce site est créé avec Publii et hébergé sur Github Pages.",
+            "content_html": "<p>Ce site est créé avec Publii et hébergé sur Github Pages.</p>",
+            "author": {
+                "name": "Etienne Le Belléguy"
+            },
+            "tags": [
+            ],
+            "date_published": "2023-01-04T23:39:33+01:00",
+            "date_modified": "2023-01-04T23:41:30+01:00"
+        }
     ]
 }

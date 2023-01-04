@@ -3,10 +3,30 @@
     <title>etiennelb</title>
     <link href="https://etiennelb.com/feed.xml" rel="self" />
     <link href="https://etiennelb.com" />
-    <updated>1970-01-01T01:00:00+01:00</updated>
+    <updated>2023-01-04T23:41:30+01:00</updated>
     <author>
         <name>Etienne Le Belléguy</name>
     </author>
     <id>https://etiennelb.com</id>
 
+    <entry>
+        <title>A propos</title>
+        <author>
+            <name>Etienne Le Belléguy</name>
+        </author>
+        <link href="https://etiennelb.com/about/"/>
+        <id>https://etiennelb.com/about/</id>
+
+        <updated>2023-01-04T23:41:30+01:00</updated>
+            <summary>
+                <![CDATA[
+                    Ce site est créé avec Publii et hébergé sur Github Pages.
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Ce site est créé avec Publii et hébergé sur Github Pages.</p>
+            ]]>
+        </content>
+    </entry>
 </feed>
