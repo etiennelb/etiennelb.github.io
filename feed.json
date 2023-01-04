@@ -13,15 +13,15 @@
             "id": "https://etiennelb.com/about/",
             "url": "https://etiennelb.com/about/",
             "title": "A propos",
-            "summary": "Ce site est créé avec Publii et hébergé sur Github Pages.",
-            "content_html": "<p>Ce site est créé avec Publii et hébergé sur Github Pages.</p>",
+            "summary": "Ce site est actuellement créé avec Publii et hébergé sur Github Pages. J'écris mes brouillons d'article dans Obsidian, Apple Notes ou directement dans Publii. Avant, j'ai tenté d'utiliser Jekyll, puis Hugo, mais je n'avais pas assez de temps libre pour bidouiller et m'y tenir. Et&hellip;",
+            "content_html": "<p>Ce site est actuellement créé avec <a href=\"https://getpublii.com/\" target=\"_blank\" rel=\"noopener\">Publii</a> et hébergé sur <a href=\"https://pages.github.com/\" target=\"_blank\" rel=\"noopener\">Github Pages</a>.</p>\n<p>J'écris mes brouillons d'article dans Obsidian, Apple Notes ou directement dans Publii.</p>\n<p>Avant, j'ai tenté d'utiliser Jekyll, puis Hugo, mais je n'avais pas assez de temps libre pour bidouiller et m'y tenir. Et je ne suis plus assez bon en développement front pour customiser un thème.</p>\n<p>Ensuite, je voulais utiliser la plateforme Ghost. J'aurais pu l'héberger sur un VPS, mais toujours pas assez de temps libre de maintenir tout ça. J'ai donc démarré Ghost dans docker, et utilisé httrack dans des makefile pour créer une version statique du site et pousser la copie sur Github. Ca marchait bien. Mais je me suis lassé de Ghost après avoir essayé Publii.</p>\n<p>Les seuls inconvénients à Publii sont son instabilité et le fait de ne pas pouvoir stocker le contenu au format markdown. Le contenu est stocké dans une base sqlite, ça reste exploitable dans le temps.</p>\n<p>Les illustrations du site proviennent de <a href=\"https://unsplash.com/\">Unsplash</a>.</p>",
             "author": {
                 "name": "Etienne Le Belléguy"
             },
             "tags": [
             ],
             "date_published": "2023-01-04T23:39:33+01:00",
-            "date_modified": "2023-01-04T23:41:30+01:00"
+            "date_modified": "2023-01-04T23:59:27+01:00"
         }
     ]
 }

@@ -3,7 +3,7 @@
     <title>etiennelb</title>
     <link href="https://etiennelb.com/feed.xml" rel="self" />
     <link href="https://etiennelb.com" />
-    <updated>2023-01-04T23:41:30+01:00</updated>
+    <updated>2023-01-04T23:59:27+01:00</updated>
     <author>
         <name>Etienne Le Belléguy</name>
     </author>
@@ -17,15 +17,20 @@
         <link href="https://etiennelb.com/about/"/>
         <id>https://etiennelb.com/about/</id>
 
-        <updated>2023-01-04T23:41:30+01:00</updated>
+        <updated>2023-01-04T23:59:27+01:00</updated>
             <summary>
                 <![CDATA[
-                    Ce site est créé avec Publii et hébergé sur Github Pages.
+                    Ce site est actuellement créé avec Publii et hébergé sur Github Pages. J'écris mes brouillons d'article dans Obsidian, Apple Notes ou directement dans Publii. Avant, j'ai tenté d'utiliser Jekyll, puis Hugo, mais je n'avais pas assez de temps libre pour bidouiller et m'y tenir. Et&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Ce site est créé avec Publii et hébergé sur Github Pages.</p>
+                <p>Ce site est actuellement créé avec <a href="https://getpublii.com/" target="_blank" rel="noopener">Publii</a> et hébergé sur <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.</p>
+<p>J'écris mes brouillons d'article dans Obsidian, Apple Notes ou directement dans Publii.</p>
+<p>Avant, j'ai tenté d'utiliser Jekyll, puis Hugo, mais je n'avais pas assez de temps libre pour bidouiller et m'y tenir. Et je ne suis plus assez bon en développement front pour customiser un thème.</p>
+<p>Ensuite, je voulais utiliser la plateforme Ghost. J'aurais pu l'héberger sur un VPS, mais toujours pas assez de temps libre de maintenir tout ça. J'ai donc démarré Ghost dans docker, et utilisé httrack dans des makefile pour créer une version statique du site et pousser la copie sur Github. Ca marchait bien. Mais je me suis lassé de Ghost après avoir essayé Publii.</p>
+<p>Les seuls inconvénients à Publii sont son instabilité et le fait de ne pas pouvoir stocker le contenu au format markdown. Le contenu est stocké dans une base sqlite, ça reste exploitable dans le temps.</p>
+<p>Les illustrations du site proviennent de <a href="https://unsplash.com/">Unsplash</a>.</p>
             ]]>
         </content>
     </entry>
