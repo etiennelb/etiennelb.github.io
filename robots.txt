@@ -1,5 +1,3 @@
 User-agent: *
+Disallow:
 Sitemap: https://etiennelb.com/sitemap.xml
-Disallow: /ghost/
-Disallow: /p/
-Disallow: /email/
