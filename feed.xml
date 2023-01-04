@@ -3,10 +3,24 @@
     <title>etiennelb</title>
     <link href="https://etiennelb.com/feed.xml" rel="self" />
     <link href="https://etiennelb.com" />
-    <updated>1970-01-01T01:00:00+01:00</updated>
+    <updated>2023-01-04T22:22:16+01:00</updated>
     <author>
         <name>Etienne Le Belléguy</name>
     </author>
     <id>https://etiennelb.com</id>
 
+    <entry>
+        <title>House Music Podcasts</title>
+        <author>
+            <name>Etienne Le Belléguy</name>
+        </author>
+        <link href="https://etiennelb.com/house-music-podcasts/"/>
+        <id>https://etiennelb.com/house-music-podcasts/</id>
+        <media:content url="https://etiennelb.com/media/posts/4/guillaume-techer-Jm9P0mDPo6A-unsplash-1.jpg" medium="image" />
+            <category term="housemusic"/>
+
+        <updated>2023-01-04T22:22:16+01:00</updated>
+            <summary></summary>
+        <content></content>
+    </entry>
 </feed>
