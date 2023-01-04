@@ -3,7 +3,7 @@
     <title>etiennelb</title>
     <link href="https://etiennelb.com/feed.xml" rel="self" />
     <link href="https://etiennelb.com" />
-    <updated>2023-01-04T23:59:27+01:00</updated>
+    <updated>2023-01-05T00:16:08+01:00</updated>
     <author>
         <name>Etienne Le Belléguy</name>
     </author>
@@ -16,15 +16,18 @@
         </author>
         <link href="https://etiennelb.com/about/"/>
         <id>https://etiennelb.com/about/</id>
+        <media:content url="https://etiennelb.com/media/posts/8/simon-pallard-OtLQLsry_UM-unsplash.jpg" medium="image" />
 
-        <updated>2023-01-04T23:59:27+01:00</updated>
+        <updated>2023-01-05T00:16:08+01:00</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://etiennelb.com/media/posts/8/simon-pallard-OtLQLsry_UM-unsplash.jpg" alt="" />
                     Ce site est actuellement créé avec Publii et hébergé sur Github Pages. J'écris mes brouillons d'article dans Obsidian, Apple Notes ou directement dans Publii. Avant, j'ai tenté d'utiliser Jekyll, puis Hugo, mais je n'avais pas assez de temps libre pour bidouiller et m'y tenir. Et&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <p><img src="https://etiennelb.com/media/posts/8/simon-pallard-OtLQLsry_UM-unsplash.jpg" class="type:primaryImage" alt="" /></p>
                 <p>Ce site est actuellement créé avec <a href="https://getpublii.com/" target="_blank" rel="noopener">Publii</a> et hébergé sur <a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>.</p>
 <p>J'écris mes brouillons d'article dans Obsidian, Apple Notes ou directement dans Publii.</p>
 <p>Avant, j'ai tenté d'utiliser Jekyll, puis Hugo, mais je n'avais pas assez de temps libre pour bidouiller et m'y tenir. Et je ne suis plus assez bon en développement front pour customiser un thème.</p>
