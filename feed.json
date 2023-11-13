@@ -9,5 +9,19 @@
         "name": "etienne"
     },
     "items": [
+        {
+            "id": "https://etiennelb.com/contact/",
+            "url": "https://etiennelb.com/contact/",
+            "title": "Contact",
+            "summary": "General and job opportunities : contact@etiennelb.com or find me and contact me on any social network.",
+            "content_html": "<p>General and job opportunities : <a href=\"mailto:contact@etiennelb.com\">contact@etiennelb.com</a></p>\n<p>or find me and contact me on any social network.</p>",
+            "author": {
+                "name": "etienne"
+            },
+            "tags": [
+            ],
+            "date_published": "2023-11-13T09:53:45+01:00",
+            "date_modified": "2023-11-13T09:53:45+01:00"
+        }
     ]
 }
