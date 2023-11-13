@@ -3,31 +3,10 @@
     <title>etienne on security</title>
     <link href="https://etiennelb.com/feed.xml" rel="self" />
     <link href="https://etiennelb.com" />
-    <updated>2023-11-13T09:53:45+01:00</updated>
+    <updated>1970-01-01T01:00:00+01:00</updated>
     <author>
         <name>etienne</name>
     </author>
     <id>https://etiennelb.com</id>
 
-    <entry>
-        <title>Contact</title>
-        <author>
-            <name>etienne</name>
-        </author>
-        <link href="https://etiennelb.com/contact/"/>
-        <id>https://etiennelb.com/contact/</id>
-
-        <updated>2023-11-13T09:53:45+01:00</updated>
-            <summary>
-                <![CDATA[
-                    General and job opportunities : contact@etiennelb.com or find me and contact me on any social network.
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>General and job opportunities : <a href="mailto:contact@etiennelb.com">contact@etiennelb.com</a></p>
-<p>or find me and contact me on any social network.</p>
-            ]]>
-        </content>
-    </entry>
 </feed>
