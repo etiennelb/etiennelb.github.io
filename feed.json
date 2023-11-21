@@ -9,5 +9,19 @@
         "name": "etienne"
     },
     "items": [
+        {
+            "id": "https://etiennelb.com/awesome/",
+            "url": "https://etiennelb.com/awesome/",
+            "title": "awesome",
+            "summary": "Awesome curated lists following my interests. To find new awesome lists :",
+            "content_html": "<p>Awesome curated lists following my interests.</p>\n<p>To find new awesome lists :</p>\n<ul>\n<li><a href=\"https://github.com/sindresorhus/awesome\">https://github.com/sindresorhus/awesome</a> </li>\n<li><a href=\"https://awesomelists.top\">https://awesomelists.top</a></li>\n</ul>\n<h2>Pentest / Hacking</h2>\n<ul>\n<li><a href=\"https://github.com/enaqx/awesome-pentest\">https://github.com/enaqx/awesome-pentest</a></li>\n<li><a href=\"https://github.com/apsdehal/awesome-ctf\">https://github.com/apsdehal/awesome-ctf</a></li>\n<li><a href=\"https://github.com/carpedm20/awesome-hacking\">https://github.com/carpedm20/awesome-hacking</a></li>\n<li><a href=\"https://github.com/paragonie/awesome-appsec\">https://github.com/paragonie/awesome-appsec</a></li>\n</ul>\n<p> </p>\n<p> </p>",
+            "author": {
+                "name": "etienne"
+            },
+            "tags": [
+            ],
+            "date_published": "2023-11-21T16:50:59+01:00",
+            "date_modified": "2023-11-21T16:58:59+01:00"
+        }
     ]
 }

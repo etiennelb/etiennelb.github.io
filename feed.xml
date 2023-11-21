@@ -3,10 +3,44 @@
     <title>etienne on security</title>
     <link href="https://etiennelb.com/feed.xml" rel="self" />
     <link href="https://etiennelb.com" />
-    <updated>1970-01-01T01:00:00+01:00</updated>
+    <updated>2023-11-21T16:58:59+01:00</updated>
     <author>
         <name>etienne</name>
     </author>
     <id>https://etiennelb.com</id>
 
+    <entry>
+        <title>awesome</title>
+        <author>
+            <name>etienne</name>
+        </author>
+        <link href="https://etiennelb.com/awesome/"/>
+        <id>https://etiennelb.com/awesome/</id>
+
+        <updated>2023-11-21T16:58:59+01:00</updated>
+            <summary>
+                <![CDATA[
+                    Awesome curated lists following my interests. To find new awesome lists :
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Awesome curated lists following my interests.</p>
+<p>To find new awesome lists :</p>
+<ul>
+<li><a href="https://github.com/sindresorhus/awesome">https://github.com/sindresorhus/awesome</a> </li>
+<li><a href="https://awesomelists.top">https://awesomelists.top</a></li>
+</ul>
+<h2>Pentest / Hacking</h2>
+<ul>
+<li><a href="https://github.com/enaqx/awesome-pentest">https://github.com/enaqx/awesome-pentest</a></li>
+<li><a href="https://github.com/apsdehal/awesome-ctf">https://github.com/apsdehal/awesome-ctf</a></li>
+<li><a href="https://github.com/carpedm20/awesome-hacking">https://github.com/carpedm20/awesome-hacking</a></li>
+<li><a href="https://github.com/paragonie/awesome-appsec">https://github.com/paragonie/awesome-appsec</a></li>
+</ul>
+<p> </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
 </feed>
