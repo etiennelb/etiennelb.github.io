@@ -1,0 +1,12 @@
+/* TEAM */
+Etienne
+Twitter: @etiennelb                          
+Location: Nantes, France
+  
+/* THANKS */							
+
+/* SITE */                          
+Last update: AAAA/MM/JJ                   
+Standards: HTML5, CSS3
+Components: 
+Software: Quartz, Obsidian, VSCode
