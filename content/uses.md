@@ -1,0 +1,1 @@
+What people uses in tech : https://uses.tech/
