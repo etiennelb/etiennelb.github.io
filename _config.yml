@@ -1,1 +1,7 @@
-theme: jekyll-theme-minima
+theme: minima
+  skin: auto
+  social_links:
+    github: etiennelb
+title: etiennelb
+description: etiennelb on security
+show_excerpts: true
